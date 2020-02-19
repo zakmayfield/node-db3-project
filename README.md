@@ -28,29 +28,29 @@ Use a graphical tool like `SQLite Studio` to open `./data/northwind.db3` and exe
 Write helpers methods in `./schemes/scheme-model.js` that match the following specifications:
 
 - [x]  `find()`:
-    -   Calling find returns a promise that resolves to an array of all schemes in the database.
-    -   No steps are included.
+    - [x]  Calling find returns a promise that resolves to an array of all schemes in the database.
+    - [x]  No steps are included.
 - [x] `findById(id)`:
-    -   Expects a scheme `id` as its only parameter.
-    -   Resolve to a single scheme object.
-    -   On an invalid `id`, resolves to `null`.
+    - [x]  Expects a scheme `id` as its only parameter.
+    - [x]  Resolve to a single scheme object.
+    - [x]  On an invalid `id`, resolves to `null`.
 - [x]  `findSteps(id)`:
-    -   Expects a scheme `id`.
-    -   Resolves to an array of all correctly ordered step for the given scheme: `[ { id: 17, scheme_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, scheme_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
-    -   This array should include the `scheme_name` _not_ the `scheme_id`.
+    - [x]  Expects a scheme `id`.
+    - [x]  Resolves to an array of all correctly ordered step for the given scheme: `[ { id: 17, scheme_name: 'Find the Holy Grail', step_number: 1, instructions: 'quest'}, { id: 18, scheme_name: 'Find the Holy Grail', step_number: 2, instructions: '...and quest'}, etc. ]`.
+    - [x]  This array should include the `scheme_name` _not_ the `scheme_id`.
 - [x]  `add(scheme)`:
-    -   Expects a scheme object.
-    -   Inserts scheme into the database.
-    -   Resolves to the newly inserted scheme, including `id`.
+    - [x]  Expects a scheme object.
+    - [x]  Inserts scheme into the database.
+    - [x]  Resolves to the newly inserted scheme, including `id`.
 - [x]  `update(changes, id)`:
-    -   Expects a changes object and an `id`.
-    -   Updates the scheme with the given id.
-    -   Resolves to the newly updated scheme object.
+    - [x]  Expects a changes object and an `id`.
+    - [x]  Updates the scheme with the given id.
+    - [x]  Resolves to the newly updated scheme object.
 - [x] `remove(id)`:
-    -   Removes the scheme object with the provided id.
-    -   Resolves to the removed scheme
-    -   Resolves to `null` on an invalid id.
-    -   (Hint: Only worry about removing the `scheme`. The database is configured to automatically remove all associated steps.)
+    - [x]  Removes the scheme object with the provided id.
+    - [x]  Resolves to the removed scheme
+    - [x]  Resolves to `null` on an invalid id.
+    - [x]  (Hint: Only worry about removing the `scheme`. The database is configured to automatically remove all associated steps.)
 
 #### Schemes Schema
 

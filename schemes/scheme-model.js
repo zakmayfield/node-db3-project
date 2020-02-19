@@ -21,6 +21,7 @@ function findById(id) {
 
 function findSteps(id) {
   return db("steps")
+    .select("step_number", "instructions", "scheme_name")
     .join("schemes", "steps.scheme_id", "schemes.id")
     .orderBy("steps.step_number")
     .where("scheme_id", id)
@@ -31,10 +32,11 @@ function add(scheme) {
     .insert(scheme, "id");
 }
 
-function addStep(step, scheme_id) {
-  return db('steps')
-    .insert(step, scheme_id)
-    .where("scheme_id", scheme_id);
+function addStep(step, id) {
+  return db("steps")
+    .join("schemes", "steps.scheme_id", "schemes.id")
+    .insert(step, id)
+    .where("scheme_id", id);
 }
 
 function update(changes, id) {
