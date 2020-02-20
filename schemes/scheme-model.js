@@ -17,6 +17,7 @@ function find() {
 function findById(id) {
   return db('schemes')
     .where("id", id)
+    .first();
 }
 
 function findSteps(id) {
@@ -32,11 +33,9 @@ function add(scheme) {
     .insert(scheme, "id");
 }
 
-function addStep(step, id) {
+function addStep(step) {
   return db("steps")
-    .join("schemes", "steps.scheme_id", "schemes.id")
-    .insert(step, id)
-    .where("scheme_id", id);
+    .insert(step)
 }
 
 function update(changes, id) {
